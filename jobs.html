@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jobs - Campus Sphere</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- Custom CSS (same as other pages) -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    /* Header Styles */
+    header.default-header {
+      background: #343a40;
+      padding: 10px 0;
+    }
+    header.default-header .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    header.default-header .navbar-nav li a {
+      color: #fff;
+      margin-right: 15px;
+    }
+    /* Jobs Page Styles */
+    .search-bar {
+      margin: 20px 0;
+    }
+    .job-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: left;
+    }
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+    .job-card h5 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .job-card p {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    .job-card .btn {
+      margin-top: 10px;
+    }
+    /* Footer Styles */
+    footer.footer-area {
+      background: #343a40;
+      color: #fff;
+      padding: 40px 0;
+    }
+    footer.footer-area h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    footer.footer-area ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer.footer-area ul li {
+      margin-bottom: 10px;
+    }
+    footer.footer-area ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer.footer-area .footer-social a {
+      margin-right: 10px;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="default-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CAMPUS SPHERE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="networks.html">Networks</a></li>
+            <li class="nav-item"><a class="nav-link" href="jobs.html">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <!-- Search Bar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form class="d-flex search-bar" id="jobSearchForm">
+          <input class="form-control me-2" type="search" placeholder="Search for jobs, locations, or skills" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jobs Listings -->
+  <div class="container">
+    <div class="row" id="jobsList">
+      <!-- Job Card 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Software Engineer</h5>
+          <p><strong>Company:</strong> TechCorp</p>
+          <p><strong>Location:</strong> New York</p>
+          <p><strong>Required Skills:</strong> Java, Python, SQL</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Software Engineer" data-skills="Java, Python, SQL">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Data Analyst</h5>
+          <p><strong>Company:</strong> DataCorp</p>
+          <p><strong>Location:</strong> San Francisco</p>
+          <p><strong>Required Skills:</strong> SQL, Excel, Tableau</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Data Analyst" data-skills="SQL, Excel, Tableau">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Marketing Manager</h5>
+          <p><strong>Company:</strong> MarketGurus</p>
+          <p><strong>Location:</strong> Chicago</p>
+          <p><strong>Required Skills:</strong> SEO, Content Marketing, Social Media</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Marketing Manager" data-skills="SEO, Content Marketing, Social Media">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Graphic Designer</h5>
+          <p><strong>Company:</strong> DesignHub</p>
+          <p><strong>Location:</strong> Los Angeles</p>
+          <p><strong>Required Skills:</strong> Photoshop, Illustrator, InDesign</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Graphic Designer" data-skills="Photoshop, Illustrator, InDesign">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Project Manager</h5>
+          <p><strong>Company:</strong> BuildIt</p>
+          <p><strong>Location:</strong> Seattle</p>
+          <p><strong>Required Skills:</strong> Agile, Scrum, Communication</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Project Manager" data-skills="Agile, Scrum, Communication">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 6 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Financial Analyst</h5>
+          <p><strong>Company:</strong> FinServe</p>
+          <p><strong>Location:</strong> Boston</p>
+          <p><strong>Required Skills:</strong> Excel, Financial Modeling, Analysis</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Financial Analyst" data-skills="Excel, Financial Modeling, Analysis">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 7 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>HR Specialist</h5>
+          <p><strong>Company:</strong> PeopleFirst</p>
+          <p><strong>Location:</strong> Denver</p>
+          <p><strong>Required Skills:</strong> Recruitment, Employee Relations, Onboarding</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="HR Specialist" data-skills="Recruitment, Employee Relations, Onboarding">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 8 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Content Writer</h5>
+          <p><strong>Company:</strong> WriteWell</p>
+          <p><strong>Location:</strong> Austin</p>
+          <p><strong>Required Skills:</strong> Writing, SEO, Blogging</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Content Writer" data-skills="Writing, SEO, Blogging">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 9 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>UI/UX Designer</h5>
+          <p><strong>Company:</strong> DesignPro</p>
+          <p><strong>Location:</strong> San Diego</p>
+          <p><strong>Required Skills:</strong> Sketch, Figma, Adobe XD</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="UI/UX Designer" data-skills="Sketch, Figma, Adobe XD">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 10 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Data Scientist</h5>
+          <p><strong>Company:</strong> DataWave</p>
+          <p><strong>Location:</strong> New York</p>
+          <p><strong>Required Skills:</strong> Python, R, Machine Learning</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Data Scientist" data-skills="Python, R, Machine Learning">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 11 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Operations Manager</h5>
+          <p><strong>Company:</strong> OpsWorld</p>
+          <p><strong>Location:</strong> Dallas</p>
+          <p><strong>Required Skills:</strong> Logistics, Management, Strategy</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Operations Manager" data-skills="Logistics, Management, Strategy">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 12 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Customer Support Specialist</h5>
+          <p><strong>Company:</strong> SupportPlus</p>
+          <p><strong>Location:</strong> Miami</p>
+          <p><strong>Required Skills:</strong> Communication, Problem Solving, CRM</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Customer Support Specialist" data-skills="Communication, Problem Solving, CRM">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 13 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Business Analyst</h5>
+          <p><strong>Company:</strong> BizInsight</p>
+          <p><strong>Location:</strong> Atlanta</p>
+          <p><strong>Required Skills:</strong> Analysis, Reporting, Excel</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Business Analyst" data-skills="Analysis, Reporting, Excel">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 14 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>IT Support Technician</h5>
+          <p><strong>Company:</strong> TechAssist</p>
+          <p><strong>Location:</strong> San Jose</p>
+          <p><strong>Required Skills:</strong> Troubleshooting, Networking, Windows OS</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="IT Support Technician" data-skills="Troubleshooting, Networking, Windows OS">Check Eligibility</button>
+        </div>
+      </div>
+      <!-- Job Card 15 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <h5>Software Tester</h5>
+          <p><strong>Company:</strong> QualitySoft</p>
+          <p><strong>Location:</strong> Houston</p>
+          <p><strong>Required Skills:</strong> Selenium, QA, Test Automation</p>
+          <button class="btn btn-primary check-eligibility" data-bs-toggle="modal" data-bs-target="#eligibilityModal" data-job="Software Tester" data-skills="Selenium, QA, Test Automation">Check Eligibility</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eligibility Modal -->
+  <div class="modal fade" id="eligibilityModal" tabindex="-1" aria-labelledby="eligibilityModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eligibilityModalLabel">Job Eligibility</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalJobInfo"></p>
+          <p id="modalSkillsInfo"></p>
+          <p>Do you meet the eligibility criteria for this job?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="applyButton">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-area section-gap" style="background: #343a40; color: #fff; padding: 40px 0;">
+    <div class="container">
+      <div class="row">
+        <!-- Professional Tools -->
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Professional Tools</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Profile Builder</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Job Search</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Networking</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Career Insights</a></li>
+          </ul>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Home</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Events</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Features -->
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Mentorship</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Career Tips</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Industry News</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Success Stories</a></li>
+          </ul>
+        </div>
+        <!-- Resources -->
+        <div class="col-lg-2 col-md-6 single-footer-widget">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Blog</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Help Center</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="#" style="color: #fff; text-decoration: none;">Terms of Service</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-4 col-md-6 single-footer-widget">
+          <h4>Newsletter</h4>
+          <p>Stay updated with the latest career trends and networking tips.</p>
+          <div class="form-wrap">
+            <form target="_blank" action="https://example.com/subscribe" method="get" class="form-inline">
+              <input class="form-control" name="EMAIL" placeholder="Your Email Address" required type="email" style="background: #fff; color: #000; border-radius: 4px;">
+              <button class="btn btn-default text-uppercase" type="submit" style="background: #007bff; color: #fff; border: none;">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom row align-items-center mt-4">
+        <p class="footer-text m-0 col-lg-8 col-md-12">
+          &copy;<script>document.write(new Date().getFullYear());</script> Campus Sphere. All rights reserved.
+        </p>
+        <div class="col-lg-4 col-md-12 footer-social text-lg-end">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Update modal content when a Check Eligibility button is clicked
+    var eligibilityModal = document.getElementById('eligibilityModal');
+    eligibilityModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget;
+      var jobTitle = button.getAttribute('data-job');
+      var jobSkills = button.getAttribute('data-skills');
+      var modalTitle = eligibilityModal.querySelector('.modal-title');
+      var modalJobInfo = document.getElementById('modalJobInfo');
+      var modalSkillsInfo = document.getElementById('modalSkillsInfo');
+      
+      modalTitle.textContent = jobTitle + " - Eligibility Check";
+      modalJobInfo.textContent = "Job: " + jobTitle;
+      modalSkillsInfo.textContent = "Required Skills: " + jobSkills;
+    });
+    
+    // Handle Apply Now button click
+    document.getElementById('applyButton').addEventListener('click', function() {
+      alert("Proceeding to application process for this job.");
+      var modal = bootstrap.Modal.getInstance(eligibilityModal);
+      modal.hide();
+    });
+  </script>
+</body>
+</html>
